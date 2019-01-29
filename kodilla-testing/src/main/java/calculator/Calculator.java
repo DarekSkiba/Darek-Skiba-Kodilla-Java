@@ -10,8 +10,8 @@ public class Calculator
 
         do
         {
-            System.out.print("1. Addition\n");
-            System.out.print("2. Subtraction\n");
+            System.out.print("1. Dodawanie\n");
+            System.out.print("2. Odejmowanie\n");
             System.out.print("9. Exit\n\n");
             System.out.print("Enter Your Choice : ");
             choice = scan.next().charAt(0);
