@@ -48,13 +48,20 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         List<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(5);
+        numbers.add(8);
 
         //When
+        List<Integer> expNumbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(8);
         List<Integer> resultList = oddNumbersExterminator.exterminate(numbers);
-        System.out.println(numbers);
+
 
         //Then
-        Assert.assertEquals((numbers % 2) == 0, resultList);
+        Assert.assertEquals(expNumbers, resultList);
     }
 
 }
