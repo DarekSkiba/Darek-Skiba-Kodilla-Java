@@ -1,9 +1,13 @@
 package com.kodilla.testing;
-import com.kodilla.testing.user.SimpleUser;
-import com.kodilla.testing.collection;
+
 import org.junit.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CollectionTestSuite {
+
+
 
     @Before
     public void before(){
@@ -22,25 +26,36 @@ public class CollectionTestSuite {
     public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
     @Test
     public void testOddNumbersExterminatorEmptyList(){
+
         //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
+    OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+    List<Integer> numbers = new ArrayList<>();
+
         //When
-        String result = simpleUser.getUsername();
-        System.out.println("Testing " + result);
+    List<Integer> resultList = oddNumbersExterminator.exterminate(numbers);
+
         //Then
-        Assert.assertEquals("theForumUser", result);
+    Assert.assertEquals(0, resultList.size());
     }
+
+
     @Test
     public void testOddNumbersExterminatorNormalList(){
+
         //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        List<Integer> numbers = new ArrayList<>();
+
         //When
-        String result = simpleUser.getUsername();
-        System.out.println("Testing " + result);
+        List<Integer> resultList = oddNumbersExterminator.exterminate(numbers);
+        System.out.println(numbers);
+
         //Then
-        Assert.assertEquals("John Smith", result);
+        Assert.assertEquals((numbers % 2) == 0, resultList);
     }
+
 }
 

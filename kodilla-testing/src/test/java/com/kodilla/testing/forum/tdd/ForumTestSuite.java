@@ -1,27 +1,10 @@
-package com.kodilla.testing.forum;
-
-import com.kodilla.testing.user.SimpleUser;
-import org.junit.Assert;
-import org.junit.Test;
-public class ForumTestSuite {
-    @Test
-    public void testCaseUsername(){
-        //Given
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
-        //When
-        String result = simpleUser.getUsername();
-        //Then
-        Assert.assertEquals("theForumUser", result);
-    }
-}
-
-
 
 package com.kodilla.testing.forum.tdd;
 
-import com.kodilla.testing.forum.ForumPost;
+
 import forum.ForumComment;
 import forum.ForumUser;
+import forum.ForumPost;
 import org.junit.*;
 
 //Test suite for classes of Forum

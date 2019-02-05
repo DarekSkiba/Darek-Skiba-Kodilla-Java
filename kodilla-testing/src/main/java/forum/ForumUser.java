@@ -1,3 +1,5 @@
+package forum;
+
 import forum.ForumComment;
 import forum.ForumPost;
 
