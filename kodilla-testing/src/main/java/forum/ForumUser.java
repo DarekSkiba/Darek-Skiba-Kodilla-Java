@@ -1,5 +1,5 @@
-import com.kodilla.testing.forum;
 import forum.ForumComment;
+import forum.ForumPost;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

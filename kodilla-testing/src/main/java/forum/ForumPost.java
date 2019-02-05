@@ -1,3 +1,5 @@
+package forum;
+
 public class ForumPost {
     String postBody;
     String author;
