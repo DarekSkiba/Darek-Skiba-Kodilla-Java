@@ -20,10 +20,10 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveShape() {
         ShapeCollector ab = new ShapeCollector();
-
+        ab.addFigure(new Circle());
         ab.addFigure(new Square());
         ab.addFigure(new Triangle());
-        ab.removeFigure(Square);
+        ab.removeFigure(Circle);
 
         Assert.assertEquals(2, ab.ListShape.size());
     }
@@ -35,8 +35,8 @@ public class ShapeCollectorTestSuite {
         bc.addFigure(new Square());
         bc.addFigure(new Triangle());
         bc.addFigure(new Circle());
-        bc.ListShape.get(2);
-        Assert.assertEquals(3, bc.ListShape.indexOf(2));
+        bc.ListShape.get(Triangle);
+        Assert.assertEquals(1, bc.ListShape.indexOf(2));
     }
 
     @Test
