@@ -1,5 +1,5 @@
 
-package com.kodilla.testing.forum.tdd;
+package com.kodilla.testing.forum;
 
 
 import forum.ForumComment;

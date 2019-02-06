@@ -1,7 +1,9 @@
-package com.kodilla.testing.forum;
 
-import com.kodilla.testing.user.SimpleUser;
+package com.kodilla.testing.forum.
+
 import org.junit.*;
+
+*;
 
 public class ForumTestSuite {
     @Before
