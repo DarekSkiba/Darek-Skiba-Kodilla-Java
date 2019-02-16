@@ -20,20 +20,7 @@ public class BookLibrary {
         return bookList;
     }
 
-    //1 book in hands
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> booksInHandsOf = new ArrayList<LibraryUser>();
-        if (booksInHandsOf()) == 1 ) return LibraryUser();
-
-    //no books in hands
-
-    List<Book> booksInHandsOf = new ArrayList<LibraryUser>();
-        if (booksInHandsOf()) == 0 ) return LibraryUser();
-
-    //5 books in hands
-    List<Book> booksInHandsOf = new ArrayList<LibraryUser>();
-        if (booksInHandsOf()) == 5) return LibraryUser();
-}
-}
-
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
+    }
 }

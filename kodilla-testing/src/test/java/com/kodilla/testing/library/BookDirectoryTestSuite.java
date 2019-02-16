@@ -3,29 +3,14 @@ package com.kodilla.testing.library;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import static javax.print.attribute.TextSyntax.verify;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class BookDirectoryTestSuite {
-    @Test
-    public void testListBooksWithConditionsReturnList() {
-        assertTrue(false);
-    }
-
-    @Test
-    public void testListBooksWithConditionMoreThan20() {
-        assertTrue(false);
-    }
-
-    @Test
-    public void testListBooksWithConditionFragmentShorterThan3() {
-        assertTrue(false);
-    }
 
     @Test
     public void testListBooksWithConditionsReturnList() {
@@ -101,4 +86,45 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
+
+    @Test
+    public void testUserListBooksInHands() {
+        // Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary listBooksInHandsOf = new BookLibrary(libraryDatabaseMock);
+
+        List<Book> bookList = new ArrayList<Book>();
+        Book book = new Book("One", "John1", 2000);
+        Book book1 = new Book("Two", "John2", 2001);
+        Book book2 = new Book("There", "John3", 2002);
+        Book book3 = new Book("Four", "John4", 2003);
+        Book book4 = new Book("Five", "John5", 2004);
+
+        bookList.add(book);
+        bookList.add(book1);
+        bookList.add(book2);
+        bookList.add(book3);
+        bookList.add(book4);
+
+        List<LibraryUser> libraryUser = new ArrayList<>();
+
+        LibraryUser user = new LibraryUser("Olaf", "Smith", "11111111");
+
+        libraryUser.add(user);
+        HashMap<LibraryUser, Book> bookUsers = new HashMap<>();
+
+        bookUsers.put(user, book);
+        bookUsers.put(user, book1);
+        bookUsers.put(user, book2);
+        bookUsers.put(user, book3);
+        bookUsers.put(user, book4);
+
+        // When
+        when(libraryDatabaseMock.listBooksInHandsOf(any()))
+                .thenReturn(new ArrayList<>());
+
+
+        //Then
+        assertEquals(0, listBooksInHandsOf.listBooksInHandsOf(any()).size());
     }
+}

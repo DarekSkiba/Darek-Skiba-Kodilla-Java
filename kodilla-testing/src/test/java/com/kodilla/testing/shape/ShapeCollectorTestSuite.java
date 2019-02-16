@@ -36,7 +36,7 @@ public class ShapeCollectorTestSuite {
         bc.addFigure(new Square());
         bc.addFigure(new Triangle());
         bc.addFigure(new Circle());
-        bc.ListShape.get(new Square);
+
         Assert.assertEquals(1, bc.ListShape.indexOf(1));
     }
 
@@ -47,7 +47,7 @@ public class ShapeCollectorTestSuite {
         cb.addFigure(new Square());
         cb.addFigure(new Triangle());
         cb.addFigure(new Circle());
-        cb.ListShape.get();
+
 
         Assert.assertEquals(3, cb.ListShape.size());
     }
