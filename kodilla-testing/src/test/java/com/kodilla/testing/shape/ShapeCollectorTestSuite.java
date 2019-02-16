@@ -15,6 +15,7 @@ public class ShapeCollectorTestSuite {
         sc.addFigure(new Circle());
 
         Assert.assertEquals(3, sc.ListShape.size());
+
     }
 
     @Test
@@ -23,7 +24,7 @@ public class ShapeCollectorTestSuite {
         ab.addFigure(new Circle());
         ab.addFigure(new Square());
         ab.addFigure(new Triangle());
-        ab.removeFigure(Circle);
+        ab.removeFigure(new Square());
 
         Assert.assertEquals(2, ab.ListShape.size());
     }
@@ -35,8 +36,8 @@ public class ShapeCollectorTestSuite {
         bc.addFigure(new Square());
         bc.addFigure(new Triangle());
         bc.addFigure(new Circle());
-        bc.ListShape.get(Triangle);
-        Assert.assertEquals(1, bc.ListShape.indexOf(2));
+        bc.ListShape.get(new Square);
+        Assert.assertEquals(1, bc.ListShape.indexOf(1));
     }
 
     @Test
