@@ -8,13 +8,13 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
 
-        ForumUser theForum = new ForumUser();
+        Forum theForum = new Forum();
         LocalDate age = LocalDate.of(1989,02,24);
 
         String theResultStringOfUsers = theForum.getUserList().stream()
-                .filter(forum -> forum.getSex() = "M");
-                .filter(forum -> forum.getNumberOfPost() > 0);
-                .filter(forum -> forum.getBirthDay()is.Before(age))
+                .filter(forum -> forum.getSex() == 'M')
+                .filter(forum -> forum.getNumberOfPost() > 0)
+                .filter(forum -> forum.getBirthDay().isBefore(age))
                 .map(ForumUser::toString)
 
 
