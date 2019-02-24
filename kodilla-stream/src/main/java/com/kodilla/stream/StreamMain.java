@@ -9,7 +9,7 @@ public class StreamMain {
     public static void main(String[] args) {
 
         Forum theForum = new Forum();
-        LocalDate age = LocalDate.of(1989,02,24);
+        LocalDate age = LocalDate.now().minusYears(20);
 
         String theResultStringOfUsers = theForum.getUserList().stream()
                 .filter(forum -> forum.getSex() == 'M')
