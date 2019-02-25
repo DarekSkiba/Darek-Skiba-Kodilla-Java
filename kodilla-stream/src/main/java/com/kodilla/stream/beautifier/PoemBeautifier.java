@@ -1,10 +1,10 @@
 package com.kodilla.stream.beautifier;
 
 public class PoemBeautifier {
-    String text = "abc";
 
-    /*public void beautify (PoemDecorator decorate) {
-            return new PoemDecorator(decorate + text + decorate);
+    public void beautify (String text, PoemDecorator decorate) {
+            String result = decorate.decorate(text);
+            System.out.println(result);
 
-    }*/
+    }
 }
