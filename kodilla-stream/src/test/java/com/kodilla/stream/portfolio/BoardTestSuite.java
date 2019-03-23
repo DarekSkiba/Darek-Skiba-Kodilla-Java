@@ -120,6 +120,7 @@ public class BoardTestSuite {
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
     }
+
     @Test
     public void testAddTaskListFindLongTasks() {
         //Given
@@ -153,11 +154,15 @@ public class BoardTestSuite {
                 .flatMap(t -> t.getTasks().stream())
                 .collect(Collectors.toList());
 
-        long quantityOfDays = project.getTaskLists().stream()
+        double quantityOfDays = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToInt(t -> DAYS.between(t.getCreated(), t.getDeadline()));
+                .map(t -> DAYS.between(t.getCreated(), t.getDeadline()))
+                .mapToInt(t -> t.intValue())
+                .average().orElse(0.0);
+
 
         //Then
-        Assert.assertEquals(3, sumOfTasks.size());
+        Assert.assertEquals(18.3, quantityOfDays, 0.04);
+    }
 }
