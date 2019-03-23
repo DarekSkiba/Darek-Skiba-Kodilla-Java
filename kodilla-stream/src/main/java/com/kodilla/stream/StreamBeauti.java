@@ -11,7 +11,7 @@ public class StreamBeauti {
         System.out.println("Calculating expressions with lambdas");
         poemDecorator.beautify("abc", result -> result.toUpperCase());
         poemDecorator.beautify("abc", result -> result.toLowerCase();
-        poemDecorator.beautify("abc", result -> result.replace("abc", "ale ale" )
+        poemDecorator.beautify("abc", result -> result.replace("abc", "ale ale" );
 
 
     }
