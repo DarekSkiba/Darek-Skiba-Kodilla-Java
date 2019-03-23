@@ -156,7 +156,7 @@ public class BoardTestSuite {
         long quantityOfDays = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToInt(t -> average().orElse(0));
+                .mapToInt(t -> DAYS.between(t.getCreated(), t.getDeadline()));
 
         //Then
         Assert.assertEquals(3, sumOfTasks.size());
