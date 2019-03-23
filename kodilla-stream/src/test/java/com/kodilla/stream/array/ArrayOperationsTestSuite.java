@@ -9,11 +9,16 @@ public class ArrayOperationsTestSuite {
     public void testGetAverageForEmptyArray() {
         //Given
         int numbers[] = new int[5];
+        numbers[0]=25;
+        numbers[1]=20;
+        numbers[2]=15;
+        numbers[3]=10;
+        numbers[4]=5;
 
         //When
-        boolean expectedAverageExists = Double.isNaN(ArrayOperations.getAverage(numbers));
+        double expectedAverageExists = ArrayOperations.getAverage(numbers);
 
         //Then
-        Assert.assertTrue(expectedAverageExists);
+        Assert.assertEquals(15, expectedAverageExists, 0.01);
     }
 }
